@@ -4,6 +4,8 @@
 
 Python + FastAPI + Evolution API + MCP (Model Context Protocol) embutido.
 
+![Diagrama](diagrama.png)
+
 ---
 
 ## Por que isso existe
