@@ -14,19 +14,6 @@ O Claude Code CLI é incrível, mas vive no terminal. Eu queria poder pedir refa
 
 ## Como funciona
 
-```
-WhatsApp ──► Evolution API ──► FastAPI webhook ──► spawn claude CLI
-                                                         │
-                                                         ▼
-                     ┌──────────────  claude chama approval_prompt
-                     │                   (via MCP HTTP local)
-                     ▼
-        Bridge envia enquete pro WA  ✅ Sim / ❌ Não
-                     │
-                     ▼
-              voto volta pelo webhook ─► resolve Future ─► claude executa
-```
-
 1. Mensagem chega no webhook `/wa`
 2. Bridge dá `spawn` no `claude -p --mcp-config ... --permission-prompt-tool mcp__wa__approval_prompt`
 3. Toda vez que o Claude precisa de Write/Edit/Bash/etc, ele chama a tool MCP `approval_prompt`
